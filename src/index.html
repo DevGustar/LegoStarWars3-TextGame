@@ -7,8 +7,13 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <div class="fade"></div>
-    <section class="star-wars">
+    <div id="start-screen">
+      <button id="start-button">Que a força esteja com você</button>
+    </div>
+
+    <div class="fade" id="fade"></div>
+
+    <section class="star-wars" id="intro">
       <div class="crawl">
         <div class="title">
           <p>Episodio I</p>
@@ -34,6 +39,8 @@
         <p>Prepare seu sabre de luz e que a Força esteja com você!</p>
       </div>
     </section>
+
     <script type="module" src="scripts/utils.js"></script>
+    <script src="scripts/start.js"></script>
   </body>
 </html>

@@ -4,6 +4,38 @@ body {
     height: 100%;
     overflow: hidden;
     background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+#start-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+#start-button {
+    font-size: 24px;
+    padding: 15px 30px;
+    background-color: red;
+    border: 1px solid darkred;
+    border-radius: 10px;
+    font-family: 'Pathway Gothic One', sans-serif;
+    color: burlywood;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#start-button:hover {
+    background-color: green;
+    border: 1px solid darkgreen;
+    border-radius: 10px;
 }
 
 .fade {
@@ -16,9 +48,9 @@ body {
 }
 
 .star-wars {
-    display: flex;
+    display: none;
     justify-content: center;
-    height: 800px;
+    height: 650px;
     perspective: 400px;
     color: yellow;
     font-family: 'Pathway Gothic One', sans-serif;
@@ -38,14 +70,12 @@ body {
 
 @keyframes crawl {
     0% {
-        top: 0;
-
+        top: 0px;
         transform: rotateX(20deg) translateZ(0);
     }
 
     100% {
         top: -6000px;
-
         transform: rotateX(24deg) translateZ(-2500px);
     }
 }

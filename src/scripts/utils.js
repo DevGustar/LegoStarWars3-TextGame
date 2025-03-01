@@ -2,7 +2,7 @@ function tocarMusica(idAudio) {
     document.getElementById("tela-inicial").style.display = "none"; // 
 
     let musica = document.getElementById(`${idAudio}`);
-    musica.volume = 0.3;
+    musica.volume = 0.1;
     musica.play();
 
     document.getElementById("intro").style.display = "flex";

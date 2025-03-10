@@ -3,53 +3,54 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Star Wars: The Clone Wars</title>
-    <link rel="stylesheet" href="styles/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Star Wars: The Clone Wars</title>
+  <link rel="stylesheet" href="styles/style.css" />
 </head>
 
 <body>
+  <div id="tela-inicial">
+    <img id="logo" src="../imagens/Logos/StarWars_Logo.svg" alt="" ondragstart="return false;">
+    <button id="botao-start" onclick="tocarMusica('MainTitle')">Começar</button>
+  </div>
 
-    <div id="tela-inicial">
-        <button id="botao-start" onclick="tocarMusica('MainTitle')">Que a força esteja com você</button>
+  <div class="fade" id="fade"></div>
+
+  <div class="musicas">
+    <audio src="/musicas/MainTitle.mp3" id="MainTitle"></audio>
+  </div>
+
+  <section class="star-wars" id="intro">
+    <button id="skip-button" onclick="pularIntro()">Pular</button>
+    <div class="crawl">
+      <div class="title">
+        <p>Episódio I</p>
+        <h1>A AMEAÇA FANTASMA</h1>
+      </div>
+      <p>
+        Em uma galáxia muito, muito distante, a República Galáctica está
+        mergulhada em um conflito épico conhecido como as Guerras Clônicas.
+      </p>
+      <p>
+        Forças separatistas, lideradas pelo enigmático Conde Dookan, ameaçam a
+        paz e a estabilidade da galáxia.
+      </p>
+      <p>
+        Como um jovem Jedi, você é convocado para lutar ao lado de heróis
+        lendários como Anakin Skywalker, Obi-Wan Kenobi e Ahsoka Tano.
+      </p>
+      <p>
+        Sua missão: liderar tropas clonadas em batalhas decisivas, enfrentar
+        inimigos formidáveis e restaurar a ordem na galáxia.
+      </p>
+      <p>O destino de inúmeros sistemas estelares está em suas mãos.</p>
+      <p>Prepare seu sabre de luz e que a Força esteja com você!</p>
     </div>
+  </section>
 
-    <div class="fade" id="fade"></div>
-
-    <div class="musicas">
-        <audio src="/musicas/MainTitle.mp3" id="MainTitle"></audio>
-    </div>
-
-    <section class="star-wars" id="intro">
-        <div class="crawl">
-            <div class="title">
-                <p>Episodio I</p>
-                <h1>A AMEAÇA FANTASMA</h1>
-            </div>
-            <p>
-                Em uma galáxia muito, muito distante, a República Galáctica está
-                mergulhada em um conflito épico conhecido como as Guerras Clônicas.
-            </p>
-            <p>
-                Forças separatistas, lideradas pelo enigmático Conde Dookan, ameaçam a
-                paz e a estabilidade da galáxia.
-            </p>
-            <p>
-                Como um jovem Jedi, você é convocado para lutar ao lado de heróis
-                lendários como Anakin Skywalker, Obi-Wan Kenobi e Ahsoka Tano.
-            </p>
-            <p>
-                Sua missão: liderar tropas clonadas em batalhas decisivas, enfrentar
-                inimigos formidáveis e restaurar a ordem na galáxia.
-            </p>
-            <p>O destino de inúmeros sistemas estelares está em suas mãos.</p>
-            <p>Prepare seu sabre de luz e que a Força esteja com você!</p>
-        </div>
-    </section>
-
-    <script type="module" src="scripts/utils.js"></script>
-    <script src="scripts/utils.js"></script>
+  <script type="module" src="scripts/utils.js"></script>
+  <script src="scripts/utils.js"></script>
 </body>
 
 </html>

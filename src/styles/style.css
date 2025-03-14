@@ -23,25 +23,25 @@ body {
     z-index: -1;
 }
 
-#botao-start {
+#start-button {
     position: absolute;
     top: 27em;
     right: 50px;
     font-size: 24px;
     padding: 15px 30px;
-    background-color: transparent;
-    border: 1px solid rgba(211, 211, 211, 0.5);
+    background-color: orange;
+    border: 2px solid orange;
     border-radius: 5px;
     font-family: 'Pathway Gothic One', sans-serif;
-    color: white;
+    color: black;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
-#botao-start:hover {
-    background-color: orange;
-    border: 1px solid orange;
+#start-button:hover {
+    background-color: rgba(255, 166, 0, 0.5);
+    border: 2px solid rgba(255, 166, 0, 0);
     color: black;
 }
 
@@ -52,19 +52,19 @@ body {
     right: 50px;
     font-size: 24px;
     padding: 15px 30px;
-    background-color: transparent;
-    border: 1px solid rgba(211, 211, 211, 0.5);
+    background-color: orange;
+    border: 2px solid orange;
     border-radius: 5px;
     font-family: 'Pathway Gothic One', sans-serif;
-    color: white;
+    color: black;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 #skip-button:hover {
-    background-color: orange;
-    border: 1px solid orange;
+    background-color: rgba(255, 166, 0, 0.5);
+    border: 2px solid rgba(255, 166, 0, 0);
     color: black;
 }
 

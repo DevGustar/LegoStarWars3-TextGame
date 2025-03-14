@@ -1,43 +1,41 @@
-function tocarMusica(idMusica) {
-    let musica = document.getElementById(idMusica);
-    musica.volume = 0.05;
-    musica.play();
+// Função para iniciar a música com um volume padrão (caso não insira um volume)
+function startMusic(idMusic, volume = 0.1) {
+    let music = document.getElementById(idMusic); // Pega o elemento pelo id
+    music.volume = volume; // Volume da música
+    music.play(); // Inicia a música
 }
 
 
-function display(idElemento, display, ms = 0) {
+// Função para pausar a música
+function pauseMusic(idMusic) {
+    let music = document.getElementById(idMusic); // Pega o elemento pelo id
+    music.pause(); // Pausa a música
+}
+
+
+// Função para alterar o estilo de exibição de um elemento após um tempo
+function display(idElement, display, ms = 0) {
     setTimeout(() => {
-        document.getElementById(idElemento).style.display = display;
-    }, ms);
+        document.getElementById(idElement).style.display = display; // Muda o estilo display do elemento
+    }, ms); // Espera o tempo definido (ms) antes de aplicar
 }
 
 
-function pularIntro() {
-    display("intro", "none");
-    display("skip-button", "none");
-
-    let musica = document.getElementById("MainTitle");
-    musica.pause();
-    musica.currentTime = 0;
-}
-
-
-function tocarMusica(idAudio) {
-    document.getElementById("tela-inicial").style.display = "none";
-
-    let musica = document.getElementById(idAudio);
-    musica.volume = 1;
-    musica.play();
-
-    // Aguarda 15 segundos antes de exibir o botão de pular
-    setTimeout(() => {
-        document.getElementById("skip-button").style.display = "flex";
-    }, 15000);
-    // Exibe a introdução
-    document.getElementById("intro").style.display = "flex";
-    // Para a música e muda o display ao fim da animação
-    document.querySelector(".crawl").addEventListener("animationend", () => {
-        pularIntro();
+// Função para iniciar a introdução
+function startIntro() {
+    display('tela-inicial', 'none'); // Esconde a tela inicial
+    startMusic('MainTitle', 1); // Inicia a música com volume máximo
+    display('intro', 'flex'); // Exibe a tela de introdução
+    display('skip-button', 'flex', 15000); // Exibe o botão de pular após 15 segundos
+    document.querySelector(".crawl").addEventListener("animationend", () => { // Quando a animação terminar
+        skipIntro(); // Chama a função para pular a introdução
     });
 }
 
+
+// Função para pular a introdução
+function skipIntro() {
+    display("intro", "none"); // Esconde a tela de introdução
+    display("skip-button", "none"); // Esconde o botão de pular
+    pauseMusic("MainTitle"); // Pausa a música de introdução
+}

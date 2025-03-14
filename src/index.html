@@ -12,7 +12,7 @@
 <body>
   <div id="tela-inicial">
     <img id="logo" src="../imagens/Logos/StarWars_Logo.svg" alt="" ondragstart="return false;">
-    <button id="botao-start" onclick="tocarMusica('MainTitle')">Começar</button>
+    <button id="botao-start" onclick="startIntro()">Começar</button>
   </div>
 
   <div class="fade" id="fade"></div>
@@ -22,7 +22,7 @@
   </div>
 
   <section class="star-wars" id="intro">
-    <button id="skip-button" onclick="pularIntro()">Pular</button>
+    <button id="skip-button" onclick="skipIntro()">Pular</button>
     <div class="crawl">
       <div class="title">
         <p>Episódio I</p>

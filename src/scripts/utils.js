@@ -1,5 +1,4 @@
-// Função para iniciar a música com um volume padrão (caso não insira um volume)
-function startMusic(idMusic, volume = 0.1) {
+function startMusic(idMusic, volume = 0.3) {
     let music = document.getElementById(idMusic); // Pega o elemento pelo id
     music.volume = volume; // Volume da música
     music.play(); // Inicia a música
@@ -22,20 +21,36 @@ function display(idElement, display, ms = 0) {
 
 
 // Função para iniciar a introdução
-function startIntro() {
-    display('tela-inicial', 'none'); // Esconde a tela inicial
-    startMusic('MainTitle', 1); // Inicia a música com volume máximo
-    display('intro', 'flex'); // Exibe a tela de introdução
-    display('skip-button', 'flex', 15000); // Exibe o botão de pular após 15 segundos
-    document.querySelector(".crawl").addEventListener("animationend", () => { // Quando a animação terminar
-        skipIntro(); // Chama a função para pular a introdução
-    });
+function startIntro(displayDown, history = 'none') {
+    if (history == 'Arena Geonosiana') {
+        display(displayDown, 'none'); // Esconde a tela inicial
+        startMusic('MainTitle', 1); // Inicia a música com volume máximo
+        display('intro', 'flex'); // Exibe a tela de introdução
+        display('skip-button', 'flex', 14000); // Exibe o botão de pular após 15 segundos
+    }
+    if (history == '1') {
+        display(displayDown, 'none'); // Esconde a tela inicial
+        startMusic('MainTitle', 1); // Inicia a música com volume máximo
+        display('intro', 'flex'); // Exibe a tela de introdução
+        display('skip-button', 'flex', 15000); // Exibe o botão de pular após 15 segundos
+    }
+    if (history == '2') {
+        display(displayDown, 'none'); // Esconde a tela inicial
+        startMusic('MainTitle', 1); // Inicia a música com volume máximo
+        display('intro', 'flex'); // Exibe a tela de introdução
+        display('skip-button', 'flex', 15000); // Exibe o botão de pular após 15 segundos
+    }
+    if (history != 'none') {
+        document.querySelector('.crawl').addEventListener('animationend', () => { // Quando a animação terminar
+            skipIntro(); // Chama a função para pular a introdução
+        });
+    }
 }
 
 
 // Função para pular a introdução
 function skipIntro() {
-    display("intro", "none"); // Esconde a tela de introdução
-    display("skip-button", "none"); // Esconde o botão de pular
-    pauseMusic("MainTitle"); // Pausa a música de introdução
+    document.querySelector(".intro").style.display = 'none'; // Esconde a tela de introdução
+    display('skip-button', 'none'); // Esconde o botão de pular
+    pauseMusic('MainTitle'); // Pausa a música de introdução
 }

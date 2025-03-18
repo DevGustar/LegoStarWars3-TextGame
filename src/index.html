@@ -5,51 +5,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Star Wars: The Clone Wars</title>
+  <title>Lego Star Wars 3: The Clone Wars</title>
   <link rel="stylesheet" href="styles/style.css" />
 </head>
 
 <body>
+  <div class="musicas">
+    <audio src="/musicas/MainTitle.mp3" id="MainTitle"></audio>
+    <audio src="/musicas/CantinaBand.mp3" id="CantinaBand"></audio>
+  </div>
+
   <div id="tela-inicial">
     <img id="logo" src="../imagens/Logos/StarWars_Logo.svg" alt="" ondragstart="return false;">
-    <button id="start-button" onclick="startIntro()">Começar</button>
+    <button id="start-button" onclick="startIntro('tela-inicial', 'Arena Geonosiana')">Começar</button>
   </div>
 
   <div class="fade" id="fade"></div>
 
-  <div class="musicas">
-    <audio src="/musicas/MainTitle.mp3" id="MainTitle"></audio>
-  </div>
-
-  <section class="star-wars" id="intro">
+  <section class="intro" id="intro">
     <button id="skip-button" onclick="skipIntro()">Pular</button>
     <div class="crawl">
       <div class="title">
-        <p>Episódio I</p>
-        <h1>A AMEAÇA FANTASMA</h1>
+        <p>PRÓLOGO</p>
+        <h1>ARENA GEONOSIANA</h1>
       </div>
       <p>
-        Em uma galáxia muito, muito distante, a República Galáctica está
-        mergulhada em um conflito épico conhecido como as Guerras Clônicas.
+        O Mestre Jedi Obi-Wan Kenobi viajou para Geonosis em busca do caçador de recompensas Jango Fett.
       </p>
       <p>
-        Forças separatistas, lideradas pelo enigmático Conde Dookan, ameaçam a
-        paz e a estabilidade da galáxia.
+        No entanto, ele foi capturado pelo Conde Dookan, o líder de uma conspiração separatista contra a República.
       </p>
       <p>
-        Como um jovem Jedi, você é convocado para lutar ao lado de heróis
-        lendários como Anakin Skywalker, Obi-Wan Kenobi e Ahsoka Tano.
+        Anakin e Padmé receberam o sinal de socorro de Obi-Wan, mas eles também foram capturados.
       </p>
       <p>
-        Sua missão: liderar tropas clonadas em batalhas decisivas, enfrentar
-        inimigos formidáveis e restaurar a ordem na galáxia.
+        Agora, os três aguardam seu destino na arena de execução geonosiana...
       </p>
-      <p>O destino de inúmeros sistemas estelares está em suas mãos.</p>
-      <p>Prepare seu sabre de luz e que a Força esteja com você!</p>
     </div>
   </section>
 
-  <script type="module" src="scripts/utils.js"></script>
   <script src="scripts/utils.js"></script>
 </body>
 

@@ -45,6 +45,10 @@ body {
     color: black;
 }
 
+.title h1 {
+    letter-spacing: 16px;
+}
+
 #skip-button {
     display: none;
     position: absolute;
@@ -77,7 +81,7 @@ body {
     z-index: 1;
 }
 
-.star-wars {
+.intro {
     display: none;
     justify-content: center;
     height: 1500px;
@@ -108,4 +112,14 @@ body {
         top: -6000px;
         transform: rotateX(24deg) translateZ(-2500px);
     }
+}
+
+.episodio1 {
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 24px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
 }

@@ -114,21 +114,11 @@ body {
     }
 }
 
-.episodio1 {
-    font-family: 'Pathway Gothic One', sans-serif;
-    font-size: 24px;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    color: white;
-}
-
 /* Estilização da Arena Geonosiana */
 #tela-ArenaGeonosiana {
     display: none;
     text-align: center;
-    color: yellow;
+    color: white;
     font-family: 'Pathway Gothic One', sans-serif;
     font-size: 24px;
     padding: 20px;

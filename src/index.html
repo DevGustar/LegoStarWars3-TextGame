@@ -1,54 +1,81 @@
+<!-- Declaração do tipo de documento HTML5 -->
 <!DOCTYPE html>
-
-<html lang="pt-br">
+<html lang="pt-br"> <!-- Define o idioma principal da página como português do Brasil -->
 
 <head>
+  <!-- Define a codificação de caracteres como UTF-8 para suportar caracteres especiais -->
   <meta charset="UTF-8" />
+  <!-- Configura a página para ser responsiva, ajustando-se ao tamanho da tela do dispositivo -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lego Star Wars 3: The Clone Wars</title>
-  <link rel="stylesheet" href="styles/style.css" />
+  <!-- Define o título da página que será exibido na aba do navegador -->
+  <title>Star Wars: Arena Geonosiana</title>
+  <!-- Link para o arquivo de estilos CSS externo -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Define o ícone da página exibido na aba do navegador -->
+  <link rel="icon" href="../imagens/Ícones/soldado-de-assalto.svg" type="image/x-icon" />
 </head>
 
 <body>
-  <div class="musicas">
+  <header>
+    <!-- Áudio que será usado na página, com o ID para manipulação via JavaScript -->
     <audio src="/musicas/MainTitle.mp3" id="MainTitle"></audio>
+    <!-- Outro áudio para a página, também com ID para controle -->
     <audio src="/musicas/CantinaBand.mp3" id="CantinaBand"></audio>
-  </div>
+  </header>
 
-  <div id="tela-inicial">
-    <img id="logo" src="../imagens/Logos/StarWars_Logo.svg" alt="" ondragstart="return false;">
-    <button id="start-button" onclick="startIntro('tela-inicial', 'Arena Geonosiana')">Começar</button>
-  </div>
+  <main>
+    <!-- Seção inicial da página, exibida ao carregar -->
+    <section id="tela-inicial">
+      <!-- Imagem do logo de Star Wars, com o atributo para impedir arrastar a imagem -->
+      <img id="logo" src="../imagens/Logos/StarWars_Logo.svg" alt="Logo de Star Wars" ondragstart="return false;" />
+      <!-- Botão para iniciar o jogo, com acessibilidade via atributo aria-label -->
+      <button id="start-button" aria-label="Iniciar o jogo">Começar</button>
+    </section>
 
-  <div class="fade" id="fade"></div>
-
-  <section class="intro" id="intro">
-    <button id="skip-button" onclick="skipIntro()">Pular</button>
-    <div class="crawl">
-      <div class="title">
-        <p>PRÓLOGO</p>
-        <h1>ARENA GEONOSIANA</h1>
+    <!-- Seção de introdução, inicialmente oculta -->
+    <section class="intro" id="intro" style="display: none;">
+      <!-- Botão para pular a introdução, inicialmente oculto -->
+      <button id="skip-button" aria-label="Pular introdução" style="display: none;">Pular</button>
+      <!-- Div que contém o texto de introdução no estilo "crawl" (rolagem) -->
+      <div class="crawl">
+        <div class="title">
+          <!-- Título do prólogo -->
+          <p>PRÓLOGO</p>
+          <h1>ARENA GEONOSIANA</h1>
+        </div>
+        <!-- Texto narrativo da introdução -->
+        <p>O Mestre Jedi Obi-Wan Kenobi viajou para Geonosis em busca do caçador de recompensas Jango Fett.</p>
+        <p>No entanto, ele foi capturado pelo Conde Dookan, o líder de uma conspiração separatista contra a República.
+        </p>
+        <p>Anakin e Padmé receberam o sinal de socorro de Obi-Wan, mas eles também foram capturados.</p>
+        <p>Agora, os três aguardam seu destino na arena de execução geonosiana...</p>
       </div>
-      <p>
-        O Mestre Jedi Obi-Wan Kenobi viajou para Geonosis em busca do caçador de recompensas Jango Fett.
-      </p>
-      <p>
-        No entanto, ele foi capturado pelo Conde Dookan, o líder de uma conspiração separatista contra a República.
-      </p>
-      <p>
-        Anakin e Padmé receberam o sinal de socorro de Obi-Wan, mas eles também foram capturados.
-      </p>
-      <p>
-        Agora, os três aguardam seu destino na arena de execução geonosiana...
-      </p>
+    </section>
+
+    <!-- Div para a tela principal do jogo, inicialmente oculta -->
+    <div id="tela-ArenaGeonosiana" style="display: none;"></div>
+
+    <!-- Div para a tela final do jogo, inicialmente oculta -->
+    <div id="final-screen" style="display: none;">
+      <!-- Mensagem de reinício do jogo -->
+      <p>Deseja recomeçar? Você pode tentar outros caminhos.</p>
+      <!-- Botão para reiniciar o jogo -->
+      <button id="restart-button">Recomeçar</button>
+      <!-- Seção para buscar informações de personagens via API -->
+      <div id="swapi-section">
+        <p>Ou, descubra mais sobre um personagem de Star Wars:</p>
+        <!-- Campo de entrada para o nome do personagem -->
+        <input type="text" id="character-input" placeholder="Nome do personagem" />
+        <!-- Botão para buscar informações do personagem -->
+        <button id="search-character">Buscar</button>
+        <!-- Div onde as informações do personagem serão exibidas -->
+        <div id="character-info"></div>
+      </div>
     </div>
-  </section>
+  </main>
 
-  <div id="tela-ArenaGeonosiana" class="tela-ArenaGeonosiana">
-
-  </div>
-
-  <script src="scripts/utils.js"></script>
+  <!-- Link para o arquivo JavaScript externo que controla a lógica da página -->
+  <script src="script.js"></script>
 </body>
 
 </html>

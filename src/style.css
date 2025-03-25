@@ -396,3 +396,12 @@ body {
     background-color: rgba(255, 166, 0, 0.7);
     transform: scale(1.05);
 }
+
+#starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0; /* Mantém atrás de tudo */
+}

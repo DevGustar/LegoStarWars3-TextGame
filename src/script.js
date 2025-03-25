@@ -280,3 +280,51 @@ async function fetchCharacterInfo(characterName) {
         characterInfo.innerHTML = 'Erro ao buscar informações. Tente novamente.'; // Se ocorrer um erro
     }
 }
+
+const canvas = document.getElementById('starfield');
+const ctx = canvas.getContext('2d');
+
+let stars = [];
+const numStars = 100;
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+function createStars() {
+    stars = [];
+    for (let i = 0; i < numStars; i++) {
+        stars.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: Math.random() * 2,
+            speed: Math.random() * 1 + 0.2,
+        });
+    }
+}
+
+function animateStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (let star of stars) {
+        star.y += star.speed;
+        if (star.y > canvas.height) {
+            star.y = 0;
+            star.x = Math.random() * canvas.width;
+        }
+        ctx.fillStyle = 'white';
+        ctx.fillRect(star.x, star.y, star.size, star.size);
+    }
+
+    requestAnimationFrame(animateStars);
+}
+
+window.addEventListener('resize', () => {
+    resizeCanvas();
+    createStars();
+});
+
+resizeCanvas();
+createStars();
+animateStars();

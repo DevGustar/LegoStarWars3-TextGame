@@ -1,0 +1,180 @@
+/* Estilo global */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container do quiz */
+#quiz-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: orange;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Cabeçalho do quiz */
+h1 {
+    text-align: center;
+    color: #1f3b4d;
+}
+
+/* Estilo dos botões */
+button {
+    background-color: #1f3b4d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #172d3a;
+}
+
+/* Botão de reiniciar */
+#restart-quiz {
+    display: none;
+    /* Escondido inicialmente */
+}
+
+/* Container das perguntas e opções */
+#quiz-content {
+    display: none;
+    /* Escondido até o quiz ser iniciado */
+    text-align: center;
+    /* Estilo para as perguntas do quiz */
+    color: white;
+    /* Cor do texto em branco */
+    font-weight: bold;
+    /* Deixa o texto em negrito */
+    font-size: 20px;
+    /* Ajusta o tamanho da fonte */
+    margin-bottom: 20px;
+    /* Espaçamento abaixo da pergunta */
+}
+
+/* Exibição da pontuação e vidas */
+#score-lives {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: white;
+}
+
+/* Mensagem de fim de jogo */
+#game-over-message {
+    display: none;
+    text-align: center;
+    color: red;
+    font-size: 24px;
+}
+
+/* Estilo das opções de resposta */
+#quiz-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#quiz-options button {
+    width: auto;
+    display: inline-block;
+}
+
+/* Estilo da tela de introdução */
+#start-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+}
+
+#start-screen h2 {
+    font-size: 24px;
+    color: #1f3b4d;
+}
+
+#start-quiz {
+    background-color: #1f3b4d;
+    color: white;
+    padding: 12px 24px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#start-quiz:hover {
+    background-color: #172d3a;
+}
+
+#restart-quiz {
+    background-color: #ff0000;
+    color: white;
+    padding: 12px 24px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#restart-quiz:hover {
+    background-color: #b80000;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    #quiz-container {
+        padding: 15px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    /* Título de cada pergunta */
+    #quiz-content p {
+        color: white;
+        /* Cor do texto em branco */
+        font-weight: bold;
+        /* Deixa o texto em negrito */
+        font-size: 20px;
+        /* Ajusta o tamanho da fonte */
+        margin-bottom: 20px;
+        /* Espaçamento abaixo da pergunta */
+    }
+
+}
+
+#restart-button {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: black;
+    background-color: orange;
+    border: 2px solid orange;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    text-decoration: none;
+    float: right;
+}

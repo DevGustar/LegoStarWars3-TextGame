@@ -306,7 +306,7 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
     border: 2px solid orange;
     border-radius: 10px;
-    padding: 2rem;
+    padding: 3rem;
     text-align: center;
     color: white;
     font-family: 'Pathway Gothic One', sans-serif;
@@ -352,6 +352,7 @@ body {
 
 /* Estilo para o botão de busca de personagens */
 #search-character {
+    margin-top: 1rem;
     padding: 0.5rem 1rem;
     font-size: 1rem;
     font-weight: bold;
@@ -362,10 +363,36 @@ body {
     cursor: pointer;
 }
 
+#search-character:hover {
+    background-color: rgba(255, 166, 0, 0.7);
+    transform: scale(1.05);
+}
+
 /* Estilo para a exibição de informações do personagem */
 #character-info {
     margin-top: 1rem;
     color: white;
     font-size: 1rem;
     text-align: left;
+}
+
+#start-quiz-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    padding: 10px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    background-color: orange;
+    border: 2px solid orange;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#start-quiz-button:hover {
+    background-color: rgba(255, 166, 0, 0.7);
+    transform: scale(1.05);
 }
